@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 parties = ["ABC", "XYZ", "MNP"]
 seats = [160, 200, 40]
-colors = ["#ff9999", "#66b3ff", "#99ff99"]
+colors = ["red", "blue", "green"]
 
 plt.pie(seats, labels=parties, autopct="%1.1f%%", colors=colors, startangle=90)
 plt.title("India Election Results 2024 (Total 400 Seats)")

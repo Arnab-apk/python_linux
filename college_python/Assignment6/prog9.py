@@ -1,8 +1,12 @@
-def caesar_cipher(text, key, decode=False):
+def custom_caesar_cipher(key, message, decode=False):
+    if key < 0:
+        return "INVALID INPUT"
+    
     if decode:
         key = -key
+    
     result = ""
-    for char in text:
+    for char in message:
         if char.isupper():
             result += chr((ord(char) - ord('A') + key) % 26 + ord('A'))
         elif char.islower():
@@ -11,21 +15,23 @@ def caesar_cipher(text, key, decode=False):
             result += chr((ord(char) - ord('0') + key) % 10 + ord('0'))
         else:
             result += char
+    
     return result
 
 def main():
-    print("Caesar Cipher Program")
-    choice = input("(1) Encode or (2) Decode: ")
+    print("=== Custom Caesar Cipher ===")
+    choice = input("(1) Encrypt or (2) Decrypt: ")
     
     if choice in ['1', '2']:
-        text = input("Enter text: ")
+        message = input("Enter message: ")
         key = int(input("Enter key: "))
-        if key > 0:
-            result = caesar_cipher(text, key, decode=(choice == '2'))
-            action = "Decoded" if choice == '2' else "Encoded"
-            print(f"{action} Text: {result}")
+        
+        if key < 0:
+            print("INVALID INPUT")
         else:
-            print("Key must be positive!")
+            result = custom_caesar_cipher(key, message, decode=(choice == '2'))
+            action = "Decrypted" if choice == '2' else "Encrypted"
+            print(f"{action} Text: {result}")
     else:
         print("Invalid choice!")
 
