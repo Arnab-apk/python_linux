@@ -1,6 +1,6 @@
 """7. Prime Factorization - Find all prime factors of a number"""
 
-num = int(input("Enter a number: "))
+num = 60
 
 if num <= 1:
     print("Number must be greater than 1")

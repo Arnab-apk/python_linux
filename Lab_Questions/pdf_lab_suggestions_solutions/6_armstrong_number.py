@@ -1,13 +1,15 @@
 """6. Armstrong Number - Check if a number is Armstrong number"""
 
-num = int(input("Enter a number: "))
+num = 153
 
-# An Armstrong number (narcissistic number) is a number that is equal 
-# to the sum of its own digits each raised to the power of the number of digits
+# An Armstrong number is equal to sum of its digits each raised to power of digit count
+digits_str = str(num)
+num_digits = len(digits_str)
+sum_of_powers = sum(int(digit) ** num_digits for digit in digits_str)
 
-digits = str(num)
-num_digits = len(digits)
-sum_of_powers = sum(int(digit) ** num_digits for digit in digits)
+print(f"Checking {num}:")
+print(f"Number of digits: {num_digits}")
+print(f"Calculation: {' + '.join([f'{d}^{num_digits}' for d in digits_str])} = {sum_of_powers}")
 
 if sum_of_powers == num:
     print(f"{num} is an Armstrong number")

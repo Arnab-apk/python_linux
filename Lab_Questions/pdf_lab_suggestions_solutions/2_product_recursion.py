@@ -9,8 +9,8 @@ def product(a, b):
     else:
         return -product(a, -b)
 
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
+num1 = 5
+num2 = 4
 
 result = product(num1, num2)
 print(f"Product of {num1} and {num2} = {result}")

@@ -2,9 +2,11 @@
 
 import math
 
-a = float(input("Enter coefficient a: "))
-b = float(input("Enter coefficient b: "))
-c = float(input("Enter coefficient c: "))
+a = 1
+b = -5
+c = 6
+
+print(f"Equation: {a}x^2 + {b}x + {c} = 0\n")
 
 if a == 0:
     print("Not a quadratic equation (a cannot be 0)")
@@ -22,7 +24,3 @@ else:
         print(f"Roots are real and equal: {root}")
     else:
         print("Roots are complex (imaginary)")
-        real_part = -b / (2*a)
-        imag_part = math.sqrt(-discriminant) / (2*a)
-        print(f"Root 1 = {real_part} + {imag_part}i")
-        print(f"Root 2 = {real_part} - {imag_part}i")
